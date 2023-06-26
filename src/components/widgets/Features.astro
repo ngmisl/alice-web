@@ -1,0 +1,119 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Item {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  highlight?: string;
+  items: Array<Array<Item>>;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  highlight,
+  items = [],
+} = Astro.props;
+---
+
+<section class="scroll-mt-16" id="features">
+  <div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+    {
+      (title || subtitle || highlight) && (
+        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+          {highlight && (
+            <p
+              class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase"
+              set:html={highlight}
+            />
+          )}
+          {title && (
+            <h2
+              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )}
+
+          {subtitle && (
+            <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400" set:html={subtitle} />
+          )}
+        </div>
+      )
+    }
+    <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+      {
+        items.map((subitems) => (
+          <div class="space-y-8 sm:px-8">
+            {subitems.map(({ title, description, icon }) => (
+              <div class="flex flex-row max-w-md">
+                <div class="mb-4 mr-4">
+                  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary dark:bg-blue-700">
+                    {icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+                  </div>
+                </div>
+                <div>
+                  <h3 class="mb-3 text-xl font-bold">{title}</h3>
+                  <p class="text-muted dark:text-slate-400" set:html={description} />
+                </div>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<Features
+  highlight="Alice Game"
+  title="Embark on Alice's Struggle for Sanity"
+  subtitle="Join Alice on her journey through a world where societal issues are as tangible as the ground beneath her feet. Will you help her find her sanity?"
+  items={[
+    [
+      {
+        title: 'Intense Side-Scrolling Action',
+        description:
+          'Guide Alice through side-scrolling levels, collecting coins while avoiding the bombs that threaten her sanity.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Metaphoric Journey',
+        description:
+          'Navigate a world that reflects societal pressures and issues, where every step feels like walking on eggshells.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Psychological Undertones',
+        description:
+          "Experience a game deeply rooted in psychology, where Alice's mental state influences her surroundings and gameplay.",
+        icon: 'tabler:arrows-right-left',
+      },
+    ],
+    [
+      {
+        title: 'Progressive Difficulty',
+        description:
+          "As Alice descends deeper into her psyche, the game's difficulty increases, mirroring her struggle for sanity.",
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Unique Artistic Style',
+        description:
+          "Immerse yourself in an artfully crafted world, where every detail is a piece of Alice's fragmented reality.",
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Community Support',
+        description:
+          'Join a community of players navigating the same struggle, sharing experiences and helping each other through the journey.',
+        icon: 'tabler:users',
+      },
+    ],
+  ]}
+/>

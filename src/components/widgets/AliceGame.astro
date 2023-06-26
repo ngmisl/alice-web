@@ -1,0 +1,167 @@
+---
+import { Picture } from '@astrojs/image/components';
+import localImage from '../../assets/images/alice.png';
+---
+
+<section class="relative flex items-center justify-center gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+  <div id="play-container" class="play-container flex flex-col items-center justify-center">
+    <Picture
+      id="character-image"
+      src={localImage}
+      widths={[400]}
+      sizes="(max-width: 400px) 100vw, 400px"
+      formats={['webp']}
+      alt="Alice"
+    />
+
+    <button
+      id="play-button"
+      class="px-8 py-4 bg-white text-black rounded hover:bg-black hover:text-white focus:outline-none">Play</button
+    >
+  </div>
+
+  <div id="dimmed-background" class="dimmed-background"></div>
+</section>
+
+<style>
+  .play-container:hover #play-button::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+    animation-fill-mode: forwards;
+  }
+
+  .play-container:hover #character-image {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+    animation-fill-mode: forwards;
+  }
+
+  button,
+  button::after {
+    padding: 16px 20px;
+    font-size: 18px;
+    background: linear-gradient(45deg, transparent 5%, #fff 5%);
+    border: 0;
+    color: #000;
+    letter-spacing: 3px;
+    line-height: 1;
+    box-shadow: 6px 0px 0px #000;
+    outline: transparent;
+    position: relative;
+  }
+
+  button::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    content: 'HELP ME';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #000 3%, #000 5%, #fff 5%);
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #000;
+    clip-path: var(--slice-0);
+  }
+
+  button:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+      content: 'Play';
+    }
+  }
+
+  #character-image {
+    width: 347px;
+    height: 415px;
+    object-fit: contain;
+    filter: invert(1);
+  }
+
+  #character-image:hover {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+    animation-fill-mode: forwards;
+  }
+</style>
+
+<script is:inline>
+  const playContainer = document.getElementById('play-container');
+  const playButton = document.getElementById('play-button');
+
+  playContainer.addEventListener('mouseover', function () {
+    playButton.textContent = 'HELP ME';
+  });
+  playContainer.addEventListener('mouseout', function () {
+    playButton.textContent = 'Play';
+  });
+
+  playButton.addEventListener('click', function () {
+    window.location.href = '/alice';
+  });
+  playContainer.addEventListener('click', function () {
+    window.location.href = '/alice';
+  });
+</script>

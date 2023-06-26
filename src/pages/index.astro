@@ -1,0 +1,70 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import LatestPosts from '~/components/blog/LatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import YouTube from '~/components/widgets/YouTube.astro';
+import AliceGame from '~/components/widgets/AliceGame.astro';
+import Story from '~/components/widgets/Story.astro';
+import Tokenomics from '~/components/widgets/Tokenomics.astro';
+import Awards from '~/components/widgets/Awards.astro';
+import Monologue from '~/components/widgets/Monologue.astro';
+import Monologue1 from '~/components/widgets/Monologue1.astro';
+import Monologue2 from '~/components/widgets/Monologue2.astro';
+import Monologue3 from '~/components/widgets/Monologue3.astro';
+import Monologue4 from '~/components/widgets/Monologue4.astro';
+
+import Hero3 from '~/components/widgets/Hero3.astro';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+
+  <Hero3 />
+
+  <Monologue />
+
+  <YouTube />
+
+  <Monologue1 />
+
+  <Story />
+
+  <Monologue2 />
+
+  <AliceGame />
+
+  <Monologue3 />
+
+  <Tokenomics />
+
+  <Monologue4 />
+
+  <Awards />
+
+  <!-- HighlightedPosts Widget ******* 'get-started-website-with-astro-tailwind-css.md',-->
+
+  <LatestPosts title="Follow My Journey, If You Dare" information={``} postIds={[]} />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle=""
+    highlight="FAQs"
+    items={[
+      [
+        {
+          question: 'What do I need to start?',
+          answer: 'A Gnosis supported Wallet. We recommend Frame.sh and some XDAI to mint.',
+        },
+      ],
+    ]}
+  />
+</Layout>
