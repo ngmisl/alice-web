@@ -149,9 +149,9 @@
     kleur "^4.1.5"
 
 "@astrojs/sitemap@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.3.1.tgz#2833f329e43d7210d651a1e5155625d138c6f65b"
-  integrity sha512-4ZBug4ml+2Nl5/Uh4VSja8Kij/DU7/RaNMciXCNm1EzQkP/jm+nqMG1liDDcQK5zXPAoLeaat06IbhNlruvQjg==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.3.3.tgz#c96892f67899a648e7759a428306de2606dfc95a"
+  integrity sha512-TPyyb/hKxc+bHPpSoNPhsuI0QOTVzq2tueg2r0CTH1HqigYIAA2LQkCBlQzz85R+LrOZpv4kXYmhxdDcSkJCmA==
   dependencies:
     sitemap "^7.1.1"
     zod "^3.17.3"
@@ -1046,9 +1046,9 @@
     "@types/unist" "*"
 
 "@types/node@*":
-  version "20.1.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.7.tgz#ce10c802f7731909d0a44ac9888e8b3a9125eb62"
-  integrity sha512-WCuw/o4GSwDGMoonES8rcvwsig77dGCMbZDrZr2x4ZZiNW4P/gcoZXe/0twgtobcTkmg9TuKflxYL/DuwDyJzg==
+  version "20.3.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.1.tgz#e8a83f1aa8b649377bb1fb5d7bac5cb90e784dfe"
+  integrity sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==
 
 "@types/node@^17.0.5":
   version "17.0.45"
