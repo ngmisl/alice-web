@@ -119,9 +119,9 @@
     vfile "^5.3.2"
 
 "@astrojs/partytown@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/partytown/-/partytown-1.2.1.tgz#eb64bf012a27466c514c32424b7cc86c070d9778"
-  integrity sha512-sFs4RKaahYOrHKy5rM6xf5xDavKpUICVxS0P0tQec5z3+FRq1Eo57MDTCx2QJoIhOHd3+/GgXDRHKWpbFI4RCw==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/partytown/-/partytown-1.2.3.tgz#ba82b2179017634b53fdf50c3bc12340ace6ec21"
+  integrity sha512-EYdeFfSEe5RTQsz+6Mxb9JLJWztZEOw0yjAxoDbntCdTkxDCnIwqRAhUwftx+zWsh+JIw1hOkLRNN8QOmwBiqA==
   dependencies:
     "@builder.io/partytown" "^0.7.4"
     mrmime "^1.0.0"
