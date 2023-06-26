@@ -4,7 +4,7 @@ import localImage from '../../assets/images/alice.png';
 ---
 
 <section class="relative flex items-center justify-center gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-  <div id="play-container" class="play-container flex flex-col items-center justify-center">
+  <div id="play-container2" class="play-container flex flex-col items-center justify-center">
     <Picture
       id="character-image"
       src={localImage}
@@ -15,7 +15,7 @@ import localImage from '../../assets/images/alice.png';
     />
 
     <button
-      id="play-button"
+      id="play-button2"
       class="px-8 py-4 bg-white text-black rounded hover:bg-black hover:text-white focus:outline-none">Play</button
     >
   </div>
@@ -24,13 +24,13 @@ import localImage from '../../assets/images/alice.png';
 </section>
 
 <style>
-  .play-container:hover #play-button::after {
+  .play-container2:hover #play-button2::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
     animation-fill-mode: forwards;
   }
 
-  .play-container:hover #character-image {
+  .play-container2:hover #character-image {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
     animation-fill-mode: forwards;
@@ -148,20 +148,22 @@ import localImage from '../../assets/images/alice.png';
 </style>
 
 <script is:inline>
-  const playContainer = document.getElementById('play-container');
-  const playButton = document.getElementById('play-button');
+  document.addEventListener('DOMContentLoaded', function () {
+    const playContainer2 = document.getElementById('play-container2');
+    const playButton2 = document.getElementById('play-button2');
 
-  playContainer.addEventListener('mouseover', function () {
-    playButton.textContent = 'HELP ME';
-  });
-  playContainer.addEventListener('mouseout', function () {
-    playButton.textContent = 'Play';
-  });
+    playContainer2.addEventListener('mouseover', function () {
+      playButton2.textContent = 'HELP ME';
+    });
+    playContainer2.addEventListener('mouseout', function () {
+      playButton2.textContent = 'Play';
+    });
 
-  playButton.addEventListener('click', function () {
-    window.location.href = '/alice';
-  });
-  playContainer.addEventListener('click', function () {
-    window.location.href = '/alice';
+    playButton2.addEventListener('click', function () {
+      window.location.href = '/alice';
+    });
+    playContainer2.addEventListener('click', function () {
+      window.location.href = '/alice';
+    });
   });
 </script>

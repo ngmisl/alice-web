@@ -29,7 +29,7 @@ export const headerData = {
     },
     {
       text: 'Discord',
-      href: 'https://discord.gg/fWsJhSWKfS'
+      href: 'https://discord.gg/fWsJhSWKfS',
     },
   ],
   actions: [{ type: 'button', text: 'PLAY', href: '/alice' }],
@@ -45,7 +45,6 @@ export const footerData = {
     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/alicegamedotxyz' },
     { ariaLabel: 'Mastodon', icon: 'tabler:rocket', href: 'https://mastodon.online/@alicegame' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
     Made by Alice Devs · All rights reserved. <a rel="me" href="https://mastodon.online/@alicegame" target="_blank">Mastodon</a>

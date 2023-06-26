@@ -45,6 +45,7 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "astro-rome": "^0.1.15"
   }
 }
