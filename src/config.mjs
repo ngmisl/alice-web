@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.webp';
 const CONFIG = {
   name: 'Alice',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://alicegame.xyz',
   basePathname: '/',
   trailingSlash: false,
 
