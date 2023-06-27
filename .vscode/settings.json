@@ -14,5 +14,16 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["astro", "astrojs", "gifs", "partytown", "tabler", "tailwindcss", "tokenomics"]
+  "cSpell.words": [
+    "alicegray",
+    "astro",
+    "astrojs",
+    "gifs",
+    "partytown",
+    "tabler",
+    "tailwindcss",
+    "tokenomics",
+    "undefeatable",
+    "webp"
+  ]
 }
